@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:newsapi/service/apiService.dart';
-
 import 'model/article.dart';
 
 void main() {
@@ -34,6 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    ;
     return Scaffold(
       appBar: AppBar(
         title: Text('News App'),
@@ -48,22 +48,31 @@ class _MyHomePageState extends State<MyHomePage> {
                                           elevation:4,
                                           child:Column(
                                             children: [
-                                              //image
-                                              // title
-                                              // desc-2 line
-                                              Text('${snapshot.data![index].urlToImage}'),
-                                              Text('${snapshot.data![index].title}', style: TextStyle(fontSize: 22)),
-                                              //Text('${snapshot.data![index].author}'),
-                                              Text('${snapshot.data![index].description}'),
-                                              //Text('${snapshot.data![index].publishedAt}'),
 
+                                              Image.network(
+
+                                                '${snapshot.data![index].urlToImage}',
+                                                height: 200,
+                                                width: 400,
+                                              ),
+                                              Text(
+                                                '${snapshot.data![index].title}',
+                                                style: TextStyle(fontSize: 16, color: Colors.cyan),
+                                              ),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                              Text(
+                                                '${snapshot.data![index].description}',
+                                                maxLines: 2,
+                                              ),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
 
                                             ],
-
                                           ),
                                       );
-
-
             }
             );
           }

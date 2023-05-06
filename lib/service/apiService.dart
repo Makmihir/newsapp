@@ -1,10 +1,9 @@
 import 'dart:convert';
-
 import 'package:http/http.dart';
 import 'package:newsapi/model/article.dart';
 
 class ApiService{
-  final endpoint = "https://newsapi.org/v2/everything?q=tesla&from=2023-04-05&sortBy=publishedAt&apiKey=6e811bb2d55143558d5a6e64b6ec97da";
+  final endpoint = "https://newsapi.org/v2/everything?q=tesla&from=2023-04-06&sortBy=publishedAt&apiKey=6e811bb2d55143558d5a6e64b6ec97da";
   Future<List<Article>> getArticle() async{
     
   Response response = await get(Uri.parse(endpoint));
